@@ -1,2 +1,2 @@
 # shonen_battle_simulator
-a game I make with heillel using godot
+a game I make with hillel using godot
