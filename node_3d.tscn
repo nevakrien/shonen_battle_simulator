@@ -1,8 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccbmvaxpydpcb"]
+[gd_scene load_steps=5 format=3 uid="uid://djcx5s4t5ny2t"]
 
 [ext_resource type="Script" path="res://Time.gd" id="1_7f643"]
+[ext_resource type="Script" path="res://player.gd" id="2_qyqjt"]
+[ext_resource type="Script" path="res://Button.gd" id="3_arjhh"]
+
+[sub_resource type="GDScript" id="GDScript_wym7y"]
+resource_name = "player_sheet"
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("1_7f643")
+
+[node name="player" type="Node3D" parent="."]
+script = SubResource("GDScript_wym7y")
+
+[node name="Node3D" type="Node3D" parent="."]
+script = ExtResource("2_qyqjt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 426.0
+offset_bottom = 218.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.27
+anchor_bottom = 0.288
+offset_right = -0.0200043
+offset_bottom = 16.216
+text = "attack"
+script = ExtResource("3_arjhh")
