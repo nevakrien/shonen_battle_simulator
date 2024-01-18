@@ -10,6 +10,8 @@ class ShonenEvent:
 	var time : float
 	var command 
 	var entity 
+	func _init(t:float):
+		time=t
 	
 static func next_events():
 	var ans = []
@@ -46,6 +48,14 @@ static func is_priorety(entity):
 			return false
 	return true;
 		
+static func get_cur_event():
+	return null
+	
+static func next_step():
+	pass
+	
+static func get_time():
+	return time
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
