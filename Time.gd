@@ -1,8 +1,8 @@
 extends Node
 
-var time =0.0
-var events = []
-var entity_events={}
+static var time =0.0
+static var events = []
+static var entity_events={}
 #class_name ShonenEvent
 class ShonenEntity: 
 	pass
@@ -11,7 +11,7 @@ class ShonenEvent:
 	var command 
 	var entity 
 	
-func next_events():
+static func next_events():
 	var ans = []
 	for event in events:
 		if event.time<time:
@@ -26,18 +26,18 @@ func next_events():
 			ans=[event]
 	return ans 
 
-func get_entity_event_list(entity):
+static func get_entity_event_list(entity):
 	if entity_events.has(entity):
 		return entity_events[entity]
 	var ans=[]
 	entity_events[entity]=ans 
 	return ans
 	
-func add_event(event : ShonenEvent):
+static func add_event(event : ShonenEvent):
 	events.append(event)
 	get_entity_event_list(event.entity).append(event)
 		
-func is_priorety(entity):
+static func is_priorety(entity):
 	var my_events = entity_events.get(entity,[])
 	for event in my_events.reversed(): 
 		#if event.entity!=entity:
