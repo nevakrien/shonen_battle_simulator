@@ -49,12 +49,4 @@ func test_time():
 	assert_not_null(time.add_event(time.ShonenEvent.new(0.5)))
 	time.next_step()
 	assert_true(time.get_time()==0.7)
-	assert_true(time.get_time()!=0.7) #to make bugs
 	assert_true(time.get_cur_event()==null)
-	
-	#assert_true(1==0)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	# This function is currently empty, meaning it doesn't perform any specific actions every frame.
-	pass
